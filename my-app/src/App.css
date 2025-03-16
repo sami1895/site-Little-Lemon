@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+
+/* Styles pour la barre de navigation */
+.navbar {
+  display: flex;             /* Utilise Flexbox */
+  align-items: center;       /* Aligne les éléments verticalement au centre */
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+.logo-container {
+  margin-right: 20px;        /* Espacement entre le logo et la barre de navigation */
+}
+
+.logo {
+  height: 40px;    /* Ajustez la taille du logo selon vos préférences */
+  width: auto;     /* Conserve les proportions du logo */
+}
+
+.nav-links {
+  display: flex;             /* Disposition horizontale des liens */
+  list-style-type: none;      /* Supprime les puces de la liste */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 20px;            /* Espacement entre les éléments de navigation */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f39c12;  /* Change la couleur au survol */
+}
