@@ -1,9 +1,11 @@
-import React from 'react';
+// Footer.js
+import React from "react";
+import "./Footer.css"; // Importe le fichier CSS spécifique à Footer
 
 function Footer() {
   return (
     <footer>
-      <p>&copy; 2025 Little Lemon Restaurant</p>
+      <p>&copy; 2023 Little Lemon. Tous droits réservés.</p>
     </footer>
   );
 }

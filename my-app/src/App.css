@@ -1,77 +1,23 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Styles pour la barre de navigation */
-.navbar {
-  display: flex;             /* Utilise Flexbox */
-  align-items: center;       /* Aligne les éléments verticalement au centre */
-  background-color: #333;
-  padding: 10px 20px;
-}
-
-.logo-container {
-  margin-right: 20px;        /* Espacement entre le logo et la barre de navigation */
-}
-
-.logo {
-  height: 40px;    /* Ajustez la taille du logo selon vos préférences */
-  width: auto;     /* Conserve les proportions du logo */
-}
-
-.nav-links {
-  display: flex;             /* Disposition horizontale des liens */
-  list-style-type: none;      /* Supprime les puces de la liste */
+/* src/App.css */
+body {
+  font-family: 'Karla', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
-.nav-links li {
-  margin: 0 20px;            /* Espacement entre les éléments de navigation */
+h1, h2, h3 {
+  color: #495e57;
 }
 
-.nav-links a {
-  color: white;
+a {
   text-decoration: none;
-  font-size: 18px;
-  transition: color 0.3s ease;
+  color: inherit;
 }
 
-.nav-links a:hover {
-  color: #f39c12;  /* Change la couleur au survol */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }

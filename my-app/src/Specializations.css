@@ -1,0 +1,10 @@
+.specializations {
+    padding: 2rem;
+    background-color: #f4f4f4;
+    text-align: center;
+  }
+  
+  .specializations h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }

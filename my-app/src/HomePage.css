@@ -1,0 +1,45 @@
+/* src/HomePage.css */
+.call-to-action {
+  background-color: #495e57;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+}
+
+.call-to-action h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.call-to-action button {
+  background-color: #f4ce14;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.call-to-action button:hover {
+  background-color: #e0b800;
+}
+
+.specializations {
+  padding: 2rem;
+  background-color: #f4f4f4;
+  text-align: center;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+}
+
+.specializations h2 {
+  font-size: 2rem;
+  color: #495e57;
+  margin-bottom: 1rem;
+}

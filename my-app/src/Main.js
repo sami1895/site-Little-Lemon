@@ -1,11 +1,18 @@
-import React from 'react';
+// src/Main.js
+import React, { useReducer } from "react";
+import BookingForm from "./BookingForm";
+import { initializeTimes, updateTimes } from "./bookingReducer";
 
 function Main() {
+  // Utilise useReducer pour gérer les heures disponibles
+  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
+
   return (
     <main>
-      {/* Contenu principal de la page */}
-      <h2>Welcome to Little Lemon!</h2>
-      <p>Explore our menu and enjoy our delicious dishes!</p>
+      <BookingForm
+        availableTimes={availableTimes}
+        dispatch={dispatch}
+      />
     </main>
   );
 }
