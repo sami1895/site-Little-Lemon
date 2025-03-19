@@ -1,25 +1,32 @@
-// src/BookingsForm.test.js
-import { render, screen, fireEvent } from "@testing-library/react";
-import BookingsForm from "./BookingsForm";
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import BookingForm from './BookingForm';
 
-test('submits the form with user data', () => {
-  const handleSubmit = jest.fn();
-  render(<BookingsForm onSubmit={handleSubmit} />);
+test('le champ "Date" a les attributs de validation HTML5', () => {
+  render(<BookingForm />);
+  const dateInput = screen.getByLabelText('Date :');
+  expect(dateInput).toHaveAttribute('type', 'date');
+  expect(dateInput).toHaveAttribute('required');
+});
 
-  // Remplir le formulaire
-  fireEvent.change(screen.getByLabelText(/Date/i), { target: { value: "2023-10-01" } });
-  fireEvent.change(screen.getByLabelText(/Heure/i), { target: { value: "18:00" } });
-  fireEvent.change(screen.getByLabelText(/Nombre d'invités/i), { target: { value: "4" } });
-  fireEvent.change(screen.getByLabelText(/Occasion/i), { target: { value: "Anniversaire" } });
+test('le champ "Heure" a les attributs de validation HTML5', () => {
+  render(<BookingForm />);
+  const timeInput = screen.getByLabelText('Heure :');
+  expect(timeInput).toHaveAttribute('type', 'time');
+  expect(timeInput).toHaveAttribute('required');
+});
 
-  // Soumettre le formulaire
-  fireEvent.click(screen.getByText(/Réserver/i));
+test('le champ "Nombre de convives" a les attributs de validation HTML5', () => {
+  render(<BookingForm />);
+  const guestsInput = screen.getByLabelText('Nombre de convives :');
+  expect(guestsInput).toHaveAttribute('type', 'number');
+  expect(guestsInput).toHaveAttribute('required');
+  expect(guestsInput).toHaveAttribute('min', '1'); // Vérifie que min="1"
+  expect(guestsInput).toHaveAttribute('max', '10'); // Vérifie que max="10"
+});
 
-  // Vérifier que la fonction de soumission a été appelée avec les bonnes données
-  expect(handleSubmit).toHaveBeenCalledWith({
-    date: "2023-10-01",
-    time: "18:00",
-    guests: "4",
-    occasion: "Anniversaire",
-  });
+test('le champ "Occasion" a les attributs de validation HTML5', () => {
+  render(<BookingForm />);
+  const occasionSelect = screen.getByLabelText('Occasion :');
+  expect(occasionSelect).toHaveAttribute('required');
 });

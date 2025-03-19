@@ -1,12 +1,13 @@
 // src/App.js
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./HomePage";
-import BookingPage from "./BookingPage"; // Assurez-vous que le nom est correct
-import Nav from "./Nav";
-import Footer from "./Footer";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './HomePage';
+import BookingPage from './BookingPage';
+import ConfirmedBooking from './ConfirmedBooking';
+import Nav from './Nav';
+import Footer from './Footer';
 
-import "./App.css";
+import './App.css';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/booking" element={<BookingPage />} />
-        
+        <Route path="/confirmation" element={<ConfirmedBooking />} />
       </Routes>
       <Footer />
     </Router>

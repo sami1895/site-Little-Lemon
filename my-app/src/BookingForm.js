@@ -1,78 +1,131 @@
-// src/BookingsForm.js
-import React, { useState, useReducer } from "react";
-import { initializeTimes, updateTimes } from "./bookingReducer";
+import React from 'react';
 
-function BookingsForm() {
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [guests, setGuests] = useState(1);
-  const [occasion, setOccasion] = useState("Anniversaire");
+const BookingForm = ({ onSubmit }) => {
+  const [formData, setFormData] = React.useState({
+    date: '',
+    time: '',
+    guests: '',
+    occasion: '',
+  });
 
-  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
-
-  const handleDateChange = (e) => {
-    const selectedDate = e.target.value;
-    setDate(selectedDate);
-    dispatch({ type: "UPDATE_TIMES", date: selectedDate });
-  };
+  const [errors, setErrors] = React.useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = { date, time, guests, occasion };
-    if (submitAPI(formData)) {
-      console.log("Réservation soumise avec succès :", formData);
-    } else {
-      console.error("Échec de la soumission de la réservation");
+    if (validateForm()) {
+      onSubmit(formData);
     }
   };
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.date) {
+      newErrors.date = 'La date est requise.';
+    } else if (new Date(formData.date) < new Date()) {
+      newErrors.date = 'La date doit être dans le futur.';
+    }
+
+    if (!formData.time) {
+      newErrors.time = 'L\'heure est requise.';
+    }
+
+    if (!formData.guests) {
+      newErrors.guests = 'Le nombre de convives est requis.';
+    } else if (formData.guests < 1 || formData.guests > 10) {
+      newErrors.guests = 'Le nombre de convives doit être entre 1 et 10.';
+    }
+
+    if (!formData.occasion) {
+      newErrors.occasion = 'Veuillez sélectionner une occasion.';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="res-date">Date :</label>
-      <input
-        type="date"
-        id="res-date"
-        value={date}
-        onChange={handleDateChange}
-        required
-      />
+    <form onSubmit={handleSubmit} aria-label="Formulaire de réservation">
+      <fieldset>
+        <legend>Réserver une table</legend>
 
-      <label htmlFor="res-time">Heure :</label>
-      <select
-        id="res-time"
-        value={time}
-        onChange={(e) => setTime(e.target.value)}
-        required
-      >
-        {availableTimes.map((timeOption) => (
-          <option key={timeOption}>{timeOption}</option>
-        ))}
-      </select>
+        {/* Champ Date */}
+        <label htmlFor="date">Date :</label>
+        <input
+          id="date"
+          type="date"
+          name="date"
+          value={formData.date}
+          onChange={handleChange}
+          required
+          aria-required="true"
+          aria-describedby="dateError"
+        />
+        {errors.date && <p id="dateError" className="error">{errors.date}</p>}
 
-      <label htmlFor="guests">Nombre d'invités :</label>
-      <input
-        type="number"
-        id="guests"
-        value={guests}
-        onChange={(e) => setGuests(e.target.value)}
-        min="1"
-        required
-      />
+        {/* Champ Heure */}
+        <label htmlFor="time">Heure :</label>
+        <input
+          id="time"
+          type="time"
+          name="time"
+          value={formData.time}
+          onChange={handleChange}
+          required
+          aria-required="true"
+          aria-describedby="timeError"
+        />
+        {errors.time && <p id="timeError" className="error">{errors.time}</p>}
 
-      <label htmlFor="occasion">Occasion :</label>
-      <select
-        id="occasion"
-        value={occasion}
-        onChange={(e) => setOccasion(e.target.value)}
-        required
-      >
-        <option>Anniversaire</option>
-        <option>Autre</option>
-      </select>
+        {/* Champ Nombre de convives */}
+        <label htmlFor="guests">Nombre de convives :</label>
+        <input
+          id="guests"
+          type="number"
+          name="guests"
+          value={formData.guests}
+          onChange={handleChange}
+          required
+          min="1"
+          max="10"
+          aria-required="true"
+          aria-describedby="guestsError"
+        />
+        {errors.guests && <p id="guestsError" className="error">{errors.guests}</p>}
 
-      <button type="submit">Réserver</button>
+        {/* Champ Occasion */}
+        <label htmlFor="occasion">Occasion :</label>
+        <select
+          id="occasion"
+          name="occasion"
+          value={formData.occasion}
+          onChange={handleChange}
+          required
+          aria-required="true"
+          aria-describedby="occasionError"
+        >
+          <option value="">Sélectionnez une occasion</option>
+          <option value="anniversaire">Anniversaire</option>
+          <option value="dîner">Dîner</option>
+          <option value="réunion">Réunion</option>
+        </select>
+        {errors.occasion && <p id="occasionError" className="error">{errors.occasion}</p>}
+
+        {/* Bouton de soumission */}
+        <button type="submit" aria-label="Réserver la table">
+          Réserver
+        </button>
+      </fieldset>
     </form>
   );
-}
+};
 
-export default BookingsForm;
+export default BookingForm;
