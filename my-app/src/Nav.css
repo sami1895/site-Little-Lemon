@@ -1,28 +1,38 @@
-/* src/Nav.css */
 nav {
-  background-color: #333;
-  padding: 1rem;
+  background-color: #f8f8f8;
+  padding: 15px 5%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* Assure que le logo et le menu sont espacés également */
+  align-items: center; /* Centrage vertical du logo et du menu */
 }
 
-nav ul {
-  display: flex;
+ul {
   list-style: none;
-  gap: 1.5rem;
+  display: flex;
+  justify-content: center; /* Centrage horizontal des éléments du menu */
+  align-items: center;
+  gap: 30px; /* Espacement régulier entre les éléments */
   margin: 0;
   padding: 0;
 }
 
-nav ul li a {
-  color: white;
+.nav-logo {
+  height: 80px; /* Taille du logo */
+  width: auto;
+  margin-left: 280px;
+}
+
+li {
+  font-size: 18px;
+}
+
+a {
   text-decoration: none;
-  font-size: 1rem;
+  color: #333;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-  color: #f4ce14;
+a:hover {
+  color: #f4a261;
 }

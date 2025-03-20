@@ -1,20 +1,60 @@
 .call-to-action {
-    background-color: #495e57;
-    color: white;
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  .call-to-action h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #f4ce14;
-  }
-  
-  .call-to-action button {
-    background-color: #f4ce14;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-  }
+  display: flex;
+  justify-content: center; /* Centre le contenu */
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 50px 5%; /* Ajoute une marge équilibrée des deux côtés */
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 50px; /* Équilibre l'espace entre texte et image */
+  flex-direction: row-reverse; /* Met l'image à droite */
+}
+
+.cta-image {
+  display: block; /* Évite des marges inattendues */
+  border-radius: 5%;
+}
+
+.cta-image img {
+  width: 200px;
+  height: auto;
+  border-radius: 15px; /* Arrondi les coins de l'image */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-text {
+  flex: 1; /* Permet au texte de s'adapter à l'espace */
+  text-align: left;
+}
+
+.cta-text h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.cta-text p {
+  font-size: 18px;
+  color: #ffffff; /* Texte plus visible sur fond clair */
+  margin-bottom: 20px;
+}
+
+.cta-text button {
+  background-color: #f4a261;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.cta-text button:hover {
+  background-color: #e76f51;
+}

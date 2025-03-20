@@ -1,52 +1,83 @@
-/* CustomersSay.css */
 .customers-say {
-    padding: 2rem;
-    background-color: #fff;
-    text-align: center;
-  }
-  
-  .customers-say h2 {
-    font-size: 2rem;
-    color: #495e57;
-    margin-bottom: 1.5rem;
-  }
-  
-  .testimonials {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-  
-  .testimonial-card {
-    background-color: #f4f4f4;
-    border-radius: 16px;
-    padding: 1.5rem;
-    max-width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .testimonial-card img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-  }
-  
-  .testimonial-card h3 {
-    font-size: 1.25rem;
-    color: #333;
-    margin-bottom: 0.5rem;
-  }
-  
-  .testimonial-card p {
-    font-size: 1rem;
-    color: #666;
-    line-height: 1.5;
-  }
-  
-  .rating {
-    color: #f4ce14;
-    font-size: 1.25rem;
-    margin-top: 1rem;
-  }
+  text-align: center;
+  padding: 50px 5%;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 📌 Conteneur avec une grille bien alignée */
+.testimonials-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px; /* Espacement équilibré */
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* 📌 Carte de témoignage */
+.testimonial-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-height: 300px; /* Assurer une hauteur égale */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 📌 Conteneur pour l'image et le nom */
+.avatar-name-container {
+  display: flex;
+  align-items: center; /* Aligne l'image et le nom verticalement */
+  justify-content: center; /* Centre horizontalement */
+  margin-bottom: 10px; /* Espacement entre le nom et le commentaire */
+}
+
+/* 📌 Image utilisateur */
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  margin-right: 10px; /* Espacement entre l'image et le nom */
+}
+
+
+
+/* 📌 Nom */
+.name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin: 0; /* Enlève la marge par défaut */
+}
+
+/* 📌 Texte du commentaire */
+.comment {
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+/* 📌 Bouton */
+.testimonial-card button {
+  background-color: #f4a261;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.testimonial-card button:hover {
+  background-color: #e76f51;
+}

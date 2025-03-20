@@ -1,13 +1,13 @@
 // Header.js
 import React from "react";
-import logo from "./logo.jpg"; // Importe l'image du logo
-import "./Header.js";
+
+import "./Header.css"; // Assurez-vous que le fichier CSS existe
 
 function Header() {
   return (
     <header>
-      <H1>Little Lemon</H1>
-      <img src={logo} alt="Little Lemon Logo" /> {/* Utilise l'image importée */}
+      <h1>Little Lemon</h1> {/* Corrige la casse */}
+      
     </header>
   );
 }

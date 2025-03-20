@@ -1,28 +1,77 @@
-/* Chicago.css */
 .chicago {
-    padding: 2rem;
-    background-color: #f4f4f4;
+  text-align: center;
+  padding: 50px 5%;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 📌 Conteneur principal */
+.chicago-card {
+  display: flex;
+  flex-direction: row-reverse; /* Image à droite, texte à gauche */
+  gap: 40px; /* Espacement équilibré */
+  max-width: 1200px;
+  width: 100%;
+  align-items: center; /* Centrage vertical */
+  justify-content: space-between; /* Espacement équilibré */
+}
+
+/* 📌 Conteneur de l'image */
+.chicago-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Centrage horizontal */
+  align-items: center; /* Centrage vertical */
+}
+
+/* 📌 Image */
+.chicago-image {
+  width: 100%; /* L'image occupe tout son conteneur */
+  max-width: 500px; /* Taille maximale */
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+}
+
+/* 📌 Conteneur du texte */
+.chicago-content {
+  flex: 1;
+  text-align: left;
+  max-width: 600px;
+  padding: 20px; /* Ajout d'un padding pour mieux équilibrer */
+}
+
+/* 📌 Titre */
+.chicago-content h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  height: 160px;
+}
+
+/* 📌 Paragraphe */
+.chicago-content p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* 📌 Responsive : Ajustement pour mobile */
+@media (max-width: 768px) {
+  .chicago-card {
+    flex-direction: column; /* Sur petits écrans, l'image est au-dessus du texte */
+    align-items: center;
     text-align: center;
   }
-  
-  .chicago h2 {
-    font-size: 2rem;
-    color: #495e57;
-    margin-bottom: 1rem;
+
+  .chicago-image {
+    width: 100%; /* L'image sera plus grande */
   }
-  
-  .chicago p {
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.5;
-    max-width: 600px;
-    margin: 0 auto;
+
+  .chicago-content {
+    text-align: center;
   }
-  
-  .chicago img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 16px;
-    margin-top: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+}

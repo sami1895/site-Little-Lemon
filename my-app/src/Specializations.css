@@ -1,10 +1,79 @@
 .specializations {
-    padding: 2rem;
-    background-color: #f4f4f4;
-    text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.specializations h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
   }
-  
-  .specializations h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
+
+/* Conteneur principal : affiche les éléments en ligne */
+.items-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap; /* Empêche le retour à la ligne */
+}
+
+/* Style de chaque élément */
+.item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1;
+  max-width: 300px;
+}
+
+/* Image des spécialités */
+.item-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Conteneur pour titre et prix */
+.title-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.title-price h2 {
+  font-size: 18px;
+  color: #555;
+  margin: 0;
+}
+
+.price {
+  font-weight: bold;
+  color: #e67e22;
+  font-size: 16px;
+}
+
+/* Bouton de commande */
+.order-btn {
+  background-color: #f4a261;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.order-btn:hover {
+  background-color: #e76f51;
+}
