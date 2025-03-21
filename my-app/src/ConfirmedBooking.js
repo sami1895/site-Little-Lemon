@@ -1,4 +1,5 @@
 import React from 'react';
+import './ConfirmedBooking.css'; // Import du fichier CSS
 
 const ConfirmedBooking = () => {
   return (

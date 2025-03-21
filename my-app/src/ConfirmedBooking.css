@@ -1,0 +1,25 @@
+/* Style pour le conteneur principal */
+.confirmed-booking {
+    text-align: center; /* Centrer le texte */
+    padding: 40px 20px; /* Espacement intérieur */
+    background-color: #f9f9f9; /* Fond léger */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    max-width: 600px; /* Largeur maximale */
+    margin: 300px auto; /* Centrer horizontalement */
+    
+  }
+  
+  /* Style pour le titre */
+  .confirmed-booking h2 {
+    color: #2ecc71; /* Couleur verte pour indiquer le succès */
+    font-size: 2rem; /* Taille de police */
+    margin-bottom: 20px; /* Espacement en dessous */
+  }
+  
+  /* Style pour le paragraphe */
+  .confirmed-booking p {
+    color: #333; /* Couleur de texte sombre */
+    font-size: 1.1rem; /* Taille de police */
+    line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
+  }

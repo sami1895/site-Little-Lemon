@@ -4,7 +4,7 @@ import Group from "./Group.png"; // Importation de l'image
 
 function Chicago() {
   return (
-    <section className="chicago">
+    <section id="chicago"className="chicago">
       <div className="chicago-card">
         <div className="chicago-image-container">
           <img src={Group} alt="Intérieur du restaurant Little Lemon" className="chicago-image" />

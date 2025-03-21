@@ -1,16 +1,14 @@
 import React from "react";
-import salade from "./salade.jpg"; // Remplace par le bon chemin de ton image
-import mk from "./mk.jpg"; // Remplace par le bon chemin de ton image
-import p from "./p.jpg"; // Remplace par le bon chemin de ton image
+import salade from "./salade.jpg";
+import mk from "./mk.jpg";
+import p from "./p.jpg";
 import "./Specializations.css";
 
 function Specializations() {
   return (
-    <section className="specializations">
+    <section id="specializations" className="specializations">
       <h1>Nos Spécialités</h1>
-      
       <div className="items-container">
-        {/* Spécialité 1 */}
         <div className="item">
           <img src={salade} alt="Spécialité 1" className="item-image" />
           <div className="item-content">
@@ -23,7 +21,6 @@ function Specializations() {
           </div>
         </div>
 
-        {/* Spécialité 2 */}
         <div className="item">
           <img src={mk} alt="Spécialité 2" className="item-image" />
           <div className="item-content">
@@ -36,7 +33,6 @@ function Specializations() {
           </div>
         </div>
 
-        {/* Spécialité 3 */}
         <div className="item">
           <img src={p} alt="Spécialité 3" className="item-image" />
           <div className="item-content">
