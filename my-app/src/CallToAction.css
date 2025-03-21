@@ -13,6 +13,8 @@
   width: 100%;
   gap: 50px; /* Équilibre l'espace entre texte et image */
   flex-direction: row-reverse; /* Met l'image à droite */
+  padding-top: 150px;
+  padding-bottom: 50px;
 }
 
 .cta-image {

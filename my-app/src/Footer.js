@@ -16,9 +16,9 @@ function Footer() {
           <h3>Navigation</h3>
           <ul className="footer-links">
             <li><Link to="/">Accueil</Link></li>
+            <li><Link to="/">Menu</Link></li>
             <li><Link to="/">À propos</Link></li>
             <li><Link to="/booking">Réservation</Link></li>
-            <li><Link to="/">Menu</Link></li>
           </ul>
         </div>
         <div className="footer-section">

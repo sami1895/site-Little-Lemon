@@ -1,49 +1,70 @@
-/* src/BookingForm.css */
 .booking-form {
-  display: grid;
-  max-width: 400px;
-  gap: 1.5rem;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: #f9f9f9;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  max-width: 500px;
+  margin: 200px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.booking-form label {
-  font-size: 1rem;
+.booking-form h2 {
   color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  display: block;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.booking-form input,
-.booking-form select {
-  padding: 0.75rem;
-  font-size: 1rem;
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #fff;
+  border-radius: 5px;
+  transition: border 0.3s ease;
 }
 
-.booking-form input:focus,
-.booking-form select:focus {
-  border-color: #f4ce14;
+input:focus,
+select:focus {
+  border-color: #f4a261;
   outline: none;
 }
 
-.booking-form button {
-  background-color: #f4ce14;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 8px;
-  margin-top: 1rem;
-  font-weight: bold;
-  color: #333;
-  transition: background-color 0.3s ease;
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
 }
 
-.booking-form button:hover {
-  background-color: #e0b800;
+.btn-reserver {
+  background-color: #f4a261;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.btn-reserver:hover {
+  background-color: #e76f51;
+}
+
+@media (max-width: 480px) {
+  .booking-form {
+    max-width: 90%;
+  }
 }

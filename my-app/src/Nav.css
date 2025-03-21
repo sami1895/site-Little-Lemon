@@ -1,25 +1,33 @@
 nav {
+  position: fixed; /* Fixer la navbar en haut */
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: #f8f8f8;
   padding: 15px 5%;
   display: flex;
-  justify-content: space-between; /* Assure que le logo et le menu sont espacés également */
-  align-items: center; /* Centrage vertical du logo et du menu */
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  
 }
 
 ul {
   list-style: none;
   display: flex;
-  justify-content: center; /* Centrage horizontal des éléments du menu */
+  justify-content: center;
   align-items: center;
-  gap: 30px; /* Espacement régulier entre les éléments */
+  gap: 30px;
   margin: 0;
   padding: 0;
 }
 
 .nav-logo {
-  height: 80px; /* Taille du logo */
+  height: 80px;
   width: auto;
-  margin-left: 280px;
+  margin-left: 220px;
+  transition: height 0.3s ease;
 }
 
 li {
@@ -35,4 +43,15 @@ a {
 
 a:hover {
   color: #f4a261;
+}
+
+/* Effet quand on scrolle */
+nav.scrolled {
+  background-color: rgba(248, 248, 248, 0.9); /* Fond semi-transparent */
+  padding: 10px 5%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav.scrolled .nav-logo {
+  height: 50px; /* Réduit la taille du logo */
 }

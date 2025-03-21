@@ -1,9 +1,16 @@
+// src/CallToAction.js
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./CallToAction.css";
-import image1 from "./image1.jpg"; // Assurez-vous que l'image "image1.jpg" est dans votre projet
+import image1 from "./image1.jpg"; // Assurez-vous que l'image est bien placée
 
 function CallToAction() {
+  const navigate = useNavigate(); // Hook pour la navigation
+
+  const handleClick = () => {
+    navigate("/booking"); // Redirige vers la page de réservation
+  };
+
   return (
     <section className="call-to-action">
       <div className="cta-content">
@@ -11,9 +18,7 @@ function CallToAction() {
         <div className="cta-text">
           <h1>Bienvenue chez Little Lemon</h1>
           <p>Découvrez notre cuisine méditerranéenne authentique.</p>
-          <Link to="/reservation">
-            <button>Réserver une table</button>
-          </Link>
+          <button onClick={handleClick}>Réserver une table</button>
         </div>
       </div>
     </section>

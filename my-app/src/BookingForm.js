@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from "react";
+import "./BookingForm.css";
 
 const BookingForm = ({ onSubmit }) => {
-  const [formData, setFormData] = React.useState({
-    date: '',
-    time: '',
-    guests: '',
-    occasion: '',
+  const [formData, setFormData] = useState({
+    date: "",
+    time: "",
+    guests: "",
+    occasion: "",
   });
 
-  const [errors, setErrors] = React.useState({});
+  const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,23 +30,23 @@ const BookingForm = ({ onSubmit }) => {
     const newErrors = {};
 
     if (!formData.date) {
-      newErrors.date = 'La date est requise.';
+      newErrors.date = "La date est requise.";
     } else if (new Date(formData.date) < new Date()) {
-      newErrors.date = 'La date doit être dans le futur.';
+      newErrors.date = "La date doit être dans le futur.";
     }
 
     if (!formData.time) {
-      newErrors.time = 'L\'heure est requise.';
+      newErrors.time = "L'heure est requise.";
     }
 
     if (!formData.guests) {
-      newErrors.guests = 'Le nombre de convives est requis.';
+      newErrors.guests = "Le nombre de convives est requis.";
     } else if (formData.guests < 1 || formData.guests > 10) {
-      newErrors.guests = 'Le nombre de convives doit être entre 1 et 10.';
+      newErrors.guests = "Le nombre de convives doit être entre 1 et 10.";
     }
 
     if (!formData.occasion) {
-      newErrors.occasion = 'Veuillez sélectionner une occasion.';
+      newErrors.occasion = "Veuillez sélectionner une occasion.";
     }
 
     setErrors(newErrors);
@@ -53,11 +54,10 @@ const BookingForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} aria-label="Formulaire de réservation">
-      <fieldset>
-        <legend>Réserver une table</legend>
+    <form onSubmit={handleSubmit} className="booking-form">
+      <h2>Réserver une table</h2>
 
-        {/* Champ Date */}
+      <div className="form-group">
         <label htmlFor="date">Date :</label>
         <input
           id="date"
@@ -66,12 +66,11 @@ const BookingForm = ({ onSubmit }) => {
           value={formData.date}
           onChange={handleChange}
           required
-          aria-required="true"
-          aria-describedby="dateError"
         />
-        {errors.date && <p id="dateError" className="error">{errors.date}</p>}
+        {errors.date && <p className="error">{errors.date}</p>}
+      </div>
 
-        {/* Champ Heure */}
+      <div className="form-group">
         <label htmlFor="time">Heure :</label>
         <input
           id="time"
@@ -80,12 +79,11 @@ const BookingForm = ({ onSubmit }) => {
           value={formData.time}
           onChange={handleChange}
           required
-          aria-required="true"
-          aria-describedby="timeError"
         />
-        {errors.time && <p id="timeError" className="error">{errors.time}</p>}
+        {errors.time && <p className="error">{errors.time}</p>}
+      </div>
 
-        {/* Champ Nombre de convives */}
+      <div className="form-group">
         <label htmlFor="guests">Nombre de convives :</label>
         <input
           id="guests"
@@ -96,12 +94,11 @@ const BookingForm = ({ onSubmit }) => {
           required
           min="1"
           max="10"
-          aria-required="true"
-          aria-describedby="guestsError"
         />
-        {errors.guests && <p id="guestsError" className="error">{errors.guests}</p>}
+        {errors.guests && <p className="error">{errors.guests}</p>}
+      </div>
 
-        {/* Champ Occasion */}
+      <div className="form-group">
         <label htmlFor="occasion">Occasion :</label>
         <select
           id="occasion"
@@ -109,21 +106,18 @@ const BookingForm = ({ onSubmit }) => {
           value={formData.occasion}
           onChange={handleChange}
           required
-          aria-required="true"
-          aria-describedby="occasionError"
         >
           <option value="">Sélectionnez une occasion</option>
           <option value="anniversaire">Anniversaire</option>
           <option value="dîner">Dîner</option>
           <option value="réunion">Réunion</option>
         </select>
-        {errors.occasion && <p id="occasionError" className="error">{errors.occasion}</p>}
+        {errors.occasion && <p className="error">{errors.occasion}</p>}
+      </div>
 
-        {/* Bouton de soumission */}
-        <button type="submit" aria-label="Réserver la table">
-          Réserver
-        </button>
-      </fieldset>
+      <button type="submit" className="btn-reserver">
+        Réserver
+      </button>
     </form>
   );
 };
