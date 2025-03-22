@@ -20,9 +20,10 @@ const BookingForm = ({ onSubmit }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(`Changement détecté : ${name} = "${value.trim()}"`); // Debugging
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]: value.trim(), // Supprime les espaces involontaires
     }));
   };
 
@@ -58,10 +59,10 @@ const BookingForm = ({ onSubmit }) => {
       <h2>Réserver une table</h2>
 
       <div className="form-group">
-        <label htmlFor="date">Date :</label>
+        <label htmlFor="date">Choisir la date</label>
         <input
-          id="date"
           type="date"
+          id="date"
           name="date"
           value={formData.date}
           onChange={handleChange}
@@ -71,35 +72,42 @@ const BookingForm = ({ onSubmit }) => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="time">Heure :</label>
-        <input
+        <label htmlFor="time">Choisir l'heure</label>
+        <select
           id="time"
-          type="time"
           name="time"
           value={formData.time}
           onChange={handleChange}
           required
-        />
+        >
+          <option value="">Sélectionnez une heure</option>
+          <option value="17:00">17:00</option>
+          <option value="18:00">18:00</option>
+          <option value="19:00">19:00</option>
+          <option value="20:00">20:00</option>
+          <option value="21:00">21:00</option>
+          <option value="22:00">22:00</option>
+        </select>
         {errors.time && <p className="error">{errors.time}</p>}
       </div>
 
       <div className="form-group">
-        <label htmlFor="guests">Nombre de convives :</label>
+        <label htmlFor="guests">Nombre de convives</label>
         <input
-          id="guests"
           type="number"
+          id="guests"
           name="guests"
           value={formData.guests}
           onChange={handleChange}
-          required
           min="1"
           max="10"
+          required
         />
         {errors.guests && <p className="error">{errors.guests}</p>}
       </div>
 
       <div className="form-group">
-        <label htmlFor="occasion">Occasion :</label>
+        <label htmlFor="occasion">Occasion</label>
         <select
           id="occasion"
           name="occasion"
@@ -108,9 +116,8 @@ const BookingForm = ({ onSubmit }) => {
           required
         >
           <option value="">Sélectionnez une occasion</option>
-          <option value="anniversaire">Anniversaire</option>
-          <option value="dîner">Dîner</option>
-          <option value="réunion">Réunion</option>
+          <option value="birthday">Anniversaire</option>
+          <option value="anniversary">Fête de fin d'année</option>
         </select>
         {errors.occasion && <p className="error">{errors.occasion}</p>}
       </div>
