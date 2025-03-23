@@ -13,10 +13,10 @@ function Chicago() {
           <h2>Little Lemon</h2>
 
           <p> Chicago</p>
-          <p>Little Lemon a été fondé en 2005 à Chicago par deux amis passionnés de cuisine. Notre objectif est de proposer des plats délicieux et authentiques qui raviront vos papilles.</p>
-          <p>Notre menu propose une variété de plats qui célèbrent la diversité culinaire. Des antipasti et pâtes fraîches aux grillades et salades composées, chaque plat est préparé avec des ingrédients locaux et biologiques. Nous croyons en l'importance de soutenir les producteurs locaux et de réduire notre impact environnemental, c'est pourquoi nous nous engageons à utiliser des pratiques durables dans notre cuisine.</p>
-          <p>Chez Little Lemon, nous croyons que la nourriture est bien plus qu'un simple repas ; c'est une expérience qui rassemble les gens. Que vous veniez pour un dîner en famille, un déjeuner entre amis ou une soirée spéciale, nous nous efforçons de créer des moments mémorables pour chacun de nos clients. Notre équipe dévouée est toujours prête à vous accueillir avec le sourire et à vous faire découvrir les saveurs qui font la renommée de Little Lemon.</p>
-          <p>Depuis nos débuts modestes, nous avons grandi, mais notre passion pour la cuisine et notre engagement envers la qualité restent inchangés. Nous sommes fiers de faire partie de la communauté de Chicago et nous nous engageons à continuer à offrir des expériences culinaires exceptionnelles pour les années à venir.</p>
+          <p>Little Lemon was founded in 2005 in Chicago by two friends passionate about cooking. Our goal is to offer delicious and authentic dishes that will delight your taste buds.</p>
+          <p>Our menu features a variety of dishes that celebrate culinary diversity. From antipasti and fresh pasta to grilled dishes and composed salads, each dish is prepared with local and organic ingredients. We believe in the importance of supporting local producers and reducing our environmental impact, which is why we are committed to using sustainable practices in our kitchen.</p>
+          <p>At Little Lemon, we believe that food is much more than just a meal; it's an experience that brings people together. Whether you come for a family dinner, a lunch with friends, or a special evening, we strive to create memorable moments for each of our guests. Our dedicated team is always ready to welcome you with a smile and introduce you to the flavors that make Little Lemon renowned.</p>
+          <p>Since our humble beginnings, we have grown, but our passion for cooking and our commitment to quality remain unchanged. We are proud to be part of the Chicago community and are committed to continuing to offer exceptional culinary experiences for years to come.</p>
         </div>
       </div>
     </section>

@@ -1,114 +1,126 @@
 footer {
   background-color: #1a1a1a;
   color: #ffffff;
-  padding: 40px 20px;
+  padding: 30px 15px;
   text-align: center;
+  width: 100%;
 }
 
+/* Contenu principal du footer */
 .footer-content {
   display: flex;
-  justify-content: space-evenly; /* Distribution uniforme des sections */
-  align-items: center; /* Aligne les éléments au centre verticalement */
+  justify-content: space-between;
+  align-items: flex-start;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
   flex-wrap: wrap;
   gap: 20px;
 }
 
+/* Sections individuelles */
 .footer-section {
   flex: 1;
   min-width: 200px;
-  text-align: center; /* Centrage du texte */
-  padding: 10px; /* Ajouter un peu d'espacement autour des sections */
+  text-align: center;
+  padding: 8px;
 }
 
 .footer-section h3 {
-  font-size: 20px;
-  margin-bottom: 15px;
+  font-size: 18px;
+  margin-bottom: 10px;
   color: #ffffff;
-  border-bottom: 2px solid #ffffff;
-  padding-bottom: 5px;
+  border-bottom: 2px solid #f8b400;
+  padding-bottom: 4px;
   display: inline-block;
 }
 
+/* Liens de navigation */
 .footer-links {
   list-style: none;
   padding: 0;
   margin: 10px 0;
   display: flex;
-  flex-direction: column; /* Disposition verticale */
-  align-items: center; /* Centre les liens horizontalement */
+  flex-direction: column;
+  align-items: center;
+  line-height: 1; /* Réduction de l'espacement entre les lignes */
 }
 
 .footer-links li {
-  margin-bottom: 8px;
+  margin-bottom: 6px; /* Moins d'espace entre les éléments */
 }
 
-.footer-links a {
+.footer-links a, .footer-link-btn {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+.footer-links a:hover, .footer-link-btn:hover {
+  color: #f8b400;
+  transform: translateX(3px);
+}
+
+/* Logo */
+.footer-logo {
+  width: 160px;
+  height: auto;
+  margin: 10px auto;
+  display: block;
+}
+
+/* Section des réseaux sociaux */
+.footer-social {
+  list-style: none;
+  padding: 0;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  line-height: 1; /* Réduction de l'espacement */
+}
+
+.footer-social li {
+  margin-bottom: 6px;
+}
+
+.footer-social a {
   color: #ffffff;
   text-decoration: none;
   font-size: 16px;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.footer-links a:hover {
+.footer-social a:hover {
   color: #f8b400;
-  transform: translateX(5px);
+  transform: scale(1.05);
 }
 
-.footer-logo {
-  width: 200px;
-  height: auto;
-  margin-top: 10px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.social-links {
-  list-style: none;
-  padding: 0;
-  margin-top: 10px;
-  display: flex;
-  justify-content: center; /* Centre les icônes sociales horizontalement */
-  gap: 20px; /* Espacement égal entre les icônes */
-}
-
-.social-links li {
-  margin-bottom: 8px;
-}
-
-.social-links a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 18px; /* Augmenter la taille des icônes sociales */
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-  color: #f8b400;
-}
-
-/* Style pour la section Contact */
+/* Section Contact */
 .footer-contact {
   list-style: none;
   padding: 0;
-  margin-top: 10px;
+  margin-top: 8px;
   display: flex;
-  flex-direction: column; /* Disposition verticale */
-  align-items: center; /* Centrage des informations */
+  flex-direction: column;
+  align-items: center;
+  line-height: 1; /* Réduction de l'espacement */
 }
 
 .footer-contact li {
-  margin-bottom: 8px;
-  font-size: 16px;
+  margin-bottom: 6px;
+  font-size: 15px;
 }
 
 .footer-contact a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 15px;
   transition: color 0.3s ease;
 }
 
@@ -116,12 +128,15 @@ footer {
   color: #f8b400;
 }
 
+/* Copyright */
 .copyright {
-  margin-top: 30px;
-  font-size: 14px;
+  margin-top: 20px;
+  font-size: 13px;
   opacity: 0.7;
-  padding-top: 15px;
+  padding-top: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   width: 100%;
   text-align: center;
+  line-height: 1; /* Réduction de l'espacement */
 }
+

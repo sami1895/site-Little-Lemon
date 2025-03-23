@@ -6,6 +6,7 @@ import ConfirmedBooking from './ConfirmedBooking'; // Page de confirmation
 import Nav from './Nav'; // Composant de navigation
 import Footer from './Footer'; // Composant footer
 import Chicago from './Chicago'; // Section "À propos"
+import Login from './Login'; // Import du formulaire de connexion
 
 import './App.css';
 
@@ -14,15 +15,11 @@ function App() {
     <Router>
       <Nav />
       <Routes>
-        <Route path="/" element={
-          <>
-            <HomePage />
-            {/* Ajout de la section Chicago */}
-          </>
-        } />
-        <Route path="/Reservations" element={<BookingPage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/reservations" element={<BookingPage />} />
         <Route path="/confirmation" element={<ConfirmedBooking />} />
-        <Route path="/Chicago" element={<Chicago/>} />
+        <Route path="/chicago" element={<Chicago />} />
+        <Route path="/login" element={<Login />} /> {/* Ajout de la route de connexion */}
       </Routes>
       <Footer />
     </Router>

@@ -1,0 +1,103 @@
+/* Style global */
+
+  
+  /* Conteneur du formulaire de login */
+  .login-form {
+    background: #ffffff;
+    width: 30%;  /* Utiliser 100% de la largeur */
+    max-width: 1200px;  /* Limiter la largeur maximale */
+    margin: 200px auto;  /* Centrer horizontalement et ajouter une marge au sommet */
+    padding: 60px;  /* Ajouter de l'espace autour du formulaire */
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .login-form h2 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 36px;  /* Taille du titre */
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  /* Groupe de champs */
+  .form-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  label {
+    font-weight: normal;
+    margin-bottom: 15px;
+    color: #444;
+    font-size: 18px;
+  }
+  
+  input {
+    width: 90%;  /* Largeur ajustée */
+    padding: 15px;
+    font-size: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  input:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(94, 82, 51, 0.5);
+  }
+  
+  .error {
+    color: red;
+    font-size: 16px;
+    margin-top: 5px;
+    font-weight: 400;
+    text-align: center;
+  }
+  
+  .btn-login {
+    background-color: #f4a261;
+    color: white;
+    font-size: 22px;
+    padding: 15px 0;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 90%;  /* Largeur ajustée */
+    font-weight: bold;
+  }
+  
+  .btn-login:hover {
+    background-color: #f57e1d;
+  }
+  
+  /* Style pour les liens */
+.links {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  .forgot-password-link,
+  .signup-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .forgot-password-link:hover,
+  .signup-link:hover {
+    color: #f57e1d;
+  }
+  
+ 
+  

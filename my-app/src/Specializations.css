@@ -1,8 +1,10 @@
 .specializations {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 12px;
   background-color: #fff;
+  margin-bottom: 150px;
+  margin-top: 150px;
 }
 
 /* Conteneur du titre et du bouton */

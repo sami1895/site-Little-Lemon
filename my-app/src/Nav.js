@@ -1,7 +1,8 @@
+// Nav.js
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Nav.css";
-import logo from "./logo.jpg"; // Assurez-vous que le logo est bien au bon emplacement
+import logo from "./logo.jpg"; // Ensure your logo is placed correctly
 
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,10 +20,10 @@ function Nav() {
   }, []);
 
   const scrollToSection = (e, sectionId) => {
-    e.preventDefault();
+    e.preventDefault();  // Prevent default behavior (i.e., clicking the link)
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      section.scrollIntoView({ behavior: "smooth" });  // Scroll smoothly to the section
     }
   };
 
@@ -34,7 +35,7 @@ function Nav() {
             <img src={logo} alt="Little Lemon Logo" className="nav-logo" />
           </Link>
         </li>
-        <li><Link to="/">Home</Link></li> {/* Accueil => Home */}
+        <li><Link to="/">Home</Link></li>
         <li>
           {location.pathname === "/" ? (
             <a href="#chicago" onClick={(e) => scrollToSection(e, "chicago")}>
@@ -53,10 +54,19 @@ function Nav() {
             <Link to="/#specializations">Menu</Link>
           )}
         </li>
+        <li><Link to="/reservations">Reservations</Link></li>
         
-        <li><Link to="/Reservations">Reservations</Link></li> {/* Réservation => Booking */}
-        <li><Link to="/order-online">Order Online</Link></li> {/* Ajouter "Order Online" */}
-        <li><Link to="/login">Login</Link></li> {/* Ajouter "Login" */}
+        {/* Order Online link now scrolls to the Order Menu button */}
+        <li>
+          {location.pathname === "/" ? (
+            <a href="#order-menu-btn" onClick={(e) => scrollToSection(e, "order-menu-btn")}>
+              Order Online
+            </a>
+          ) : (
+            <Link to="/#order-menu-btn">Order Online</Link>
+          )}
+        </li>
+        <li><Link to="/login">Login</Link></li>
       </ul>
     </nav>
   );

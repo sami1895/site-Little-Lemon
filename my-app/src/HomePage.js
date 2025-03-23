@@ -8,7 +8,7 @@ import "./HomePage.css";
 
 function HomePage() {
   return (
-    <main>
+    <main id="home">
       <CallToAction />
       <Specializations />
       <CustomersSay />

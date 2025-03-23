@@ -1,3 +1,4 @@
+// Specializations.js
 import React from "react";
 import salade from "./salade.jpg";
 import mk from "./mk.jpg";
@@ -10,7 +11,10 @@ function Specializations() {
     <section id="specializations" className="specializations">
       <div className="header-container">
         <h1>Our Specialties</h1>
-        <button className="order-menu-btn">Order Menu</button>
+        {/* Add id to the button so we can scroll to it */}
+        <button id="order-menu-btn" className="order-menu-btn">
+          Order Menu
+        </button>
       </div>
       <div className="items-container">
         <div className="item">
@@ -18,7 +22,7 @@ function Specializations() {
           <div className="item-content">
             <div className="title-price">
               <p className="price">$8.00</p>
-              <h2>Salad</h2>
+              <h2>Salade</h2>
             </div>
             <p>Discover our delicious dishes, prepared with fresh and local ingredients.</p>
             <button className="order-btn">
