@@ -3,21 +3,38 @@
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
-  text-align: center;
 }
 
-.specializations h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
+/* Conteneur du titre et du bouton */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Style du bouton "Order Menu" */
+.order-menu-btn {
+  background-color: #f4a261;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.order-menu-btn:hover {
+  background-color: #e76f51;
+}
 
 /* Conteneur principal : affiche les éléments en ligne */
 .items-container {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  flex-wrap: nowrap; /* Empêche le retour à la ligne */
+  flex-wrap: wrap;
 }
 
 /* Style de chaque élément */
@@ -28,7 +45,7 @@
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
-  flex: 1;
+  flex: 1 1 300px;
   max-width: 300px;
 }
 
@@ -41,11 +58,12 @@
   margin-bottom: 10px;
 }
 
-/* Conteneur pour titre et prix */
+/* Conteneur pour prix et titre */
 .title-price {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row-reverse; /* Inversion de l'ordre */
   margin-bottom: 10px;
 }
 
@@ -76,4 +94,10 @@
 
 .order-btn:hover {
   background-color: #e76f51;
+}
+.delivery-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  vertical-align: middle;
 }

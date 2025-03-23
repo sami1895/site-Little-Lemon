@@ -34,7 +34,16 @@ function Nav() {
             <img src={logo} alt="Little Lemon Logo" className="nav-logo" />
           </Link>
         </li>
-        <li><Link to="/">Accueil</Link></li>
+        <li><Link to="/">Home</Link></li> {/* Accueil => Home */}
+        <li>
+          {location.pathname === "/" ? (
+            <a href="#chicago" onClick={(e) => scrollToSection(e, "chicago")}>
+              About
+            </a>
+          ) : (
+            <Link to="/#chicago">About</Link>
+          )}
+        </li>
         <li>
           {location.pathname === "/" ? (
             <a href="#specializations" onClick={(e) => scrollToSection(e, "specializations")}>
@@ -44,16 +53,10 @@ function Nav() {
             <Link to="/#specializations">Menu</Link>
           )}
         </li>
-        <li>
-          {location.pathname === "/" ? (
-            <a href="#chicago" onClick={(e) => scrollToSection(e, "chicago")}>
-              À propos
-            </a>
-          ) : (
-            <Link to="/#chicago">À propos</Link>
-          )}
-        </li>
-        <li><Link to="/booking">Réservation</Link></li>
+        
+        <li><Link to="/Reservations">Reservations</Link></li> {/* Réservation => Booking */}
+        <li><Link to="/order-online">Order Online</Link></li> {/* Ajouter "Order Online" */}
+        <li><Link to="/login">Login</Link></li> {/* Ajouter "Login" */}
       </ul>
     </nav>
   );

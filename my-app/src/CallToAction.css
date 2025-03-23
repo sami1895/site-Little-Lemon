@@ -34,6 +34,12 @@
   text-align: left;
 }
 
+.cta-text h2 {
+  font-size: 40px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
 .cta-text h1 {
   font-size: 28px;
   color: #333;

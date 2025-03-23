@@ -4,10 +4,11 @@ import avatar from "./avatar1.jpg"; // Remplace par le bon chemin de l'image de 
 
 function CustomersSay() {
   const testimonials = [
-    { rating: "⭐⭐⭐⭐⭐", name: "Marie", comment: "Un délice !" },
-    { rating: "⭐⭐⭐⭐", name: "Jean", comment: "Service exceptionnel." },
-    { rating: "⭐⭐⭐⭐⭐", name: "Sophie", comment: "Je recommande vivement !" },
-    { rating: "⭐⭐⭐⭐", name: "Paul", comment: "Très bon rapport qualité-prix." },
+    { rating: "⭐⭐⭐⭐⭐", name: "Marie", comment: "A delight! nice"  },
+    { rating: "⭐⭐⭐⭐", name: "Jean", comment: "Exceptional service." },
+    { rating: "⭐⭐⭐⭐⭐", name: "Sophie", comment: "I highly recommend it!" },
+    { rating: "⭐⭐⭐⭐", name: "Paul", comment: "Very good value for money." },
+    
   ];
 
   return (

@@ -1,25 +1,51 @@
 /* Style pour le conteneur principal */
 .confirmed-booking {
-    text-align: center; /* Centrer le texte */
-    padding: 40px 20px; /* Espacement intérieur */
-    background-color: #f9f9f9; /* Fond léger */
-    border-radius: 10px; /* Coins arrondis */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
-    max-width: 600px; /* Largeur maximale */
-    margin: 300px auto; /* Centrer horizontalement */
-    
-  }
-  
-  /* Style pour le titre */
-  .confirmed-booking h2 {
-    color: #2ecc71; /* Couleur verte pour indiquer le succès */
-    font-size: 2rem; /* Taille de police */
-    margin-bottom: 20px; /* Espacement en dessous */
-  }
-  
-  /* Style pour le paragraphe */
-  .confirmed-booking p {
-    color: #333; /* Couleur de texte sombre */
-    font-size: 1.1rem; /* Taille de police */
-    line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
-  }
+  text-align: center; /* Centrer le texte */
+  padding: 40px 20px; /* Espacement intérieur */
+  background-color: #f9f9f9; /* Fond léger */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  max-width: 600px; /* Largeur maximale */
+  margin: 300px auto; /* Centrer horizontalement */
+}
+
+/* Style pour le titre */
+.confirmed-booking h2 {
+  color: #2ecc71; /* Couleur verte pour indiquer le succès */
+  font-size: 2rem; /* Taille de police */
+  margin-bottom: 20px; /* Espacement en dessous */
+}
+
+/* Style pour le paragraphe */
+.confirmed-booking p {
+  color: #333; /* Couleur de texte sombre */
+  font-size: 1.1rem; /* Taille de police */
+  line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
+}
+
+/* Style pour les boutons */
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  background-color: #f4a261; /* Bleu pour les boutons */
+  color: white; /* Texte en blanc */
+  border: none; /* Supprimer la bordure par défaut */
+  padding: 12px 25px; /* Espacement intérieur */
+  font-size: 1rem; /* Taille de police */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur pointer pour indiquer un bouton cliquable */
+  transition: background-color 0.3s ease; /* Transition pour l'effet hover */
+  margin: 10px; /* Espacement entre les boutons */
+}
+
+/* Style pour l'effet hover */
+button:hover {
+  background-color: #f89e53b3; /* Couleur bleue plus foncée au survol */
+}
+
+/* Style pour les boutons de retour et de sortie */
+button:focus {
+  outline: none; /* Retirer la bordure de focus par défaut */
+}

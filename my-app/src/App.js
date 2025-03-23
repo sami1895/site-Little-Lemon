@@ -20,7 +20,7 @@ function App() {
             {/* Ajout de la section Chicago */}
           </>
         } />
-        <Route path="/booking" element={<BookingPage />} />
+        <Route path="/Reservations" element={<BookingPage />} />
         <Route path="/confirmation" element={<ConfirmedBooking />} />
         <Route path="/Chicago" element={<Chicago/>} />
       </Routes>
