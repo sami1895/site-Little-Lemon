@@ -1,20 +1,27 @@
-import React from 'react';
-import './ConfirmedBooking.css'; // Import du fichier CSS
+// src/ConfirmedBooking.js
+import React from "react";
+import "./ConfirmedBooking.css"; // Import the CSS file
+import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
 
-const ConfirmedBooking = () => {
-  // Fonction pour gérer le retour à l'accueil
+const ConfirmedBooking = ({ onCancel }) => {
+  const navigate = useNavigate(); // Hook to navigate within the app
+
+  // Function to go back to the homepage
   const handleReturnToHome = () => {
-    // Rediriger vers l'accueil (exemple avec react-router-dom)
-    window.location.href = '/';
+    navigate("/"); // Redirect to the homepage
   };
 
   return (
     <div className="confirmed-booking">
-      <h2>Réservation confirmée !</h2>
-      <p>Votre réservation a été confirmée avec succès. Nous avons hâte de vous accueillir !</p>
-      
+      <h2>Booking Confirmed!</h2>
+      <p>Your booking has been successfully confirmed. We look forward to welcoming you!</p>
+
       <div className="buttons">
-        <button onClick={handleReturnToHome}>Retour à l'accueil</button>
+        {/* First button to cancel and do another booking */}
+        <button onClick={onCancel}>Another booking</button>
+
+        {/* Second button to return to the homepage */}
+        <button onClick={handleReturnToHome}>Return to Homepage</button>
       </div>
     </div>
   );

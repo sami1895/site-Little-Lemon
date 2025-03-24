@@ -1,39 +1,43 @@
 // src/services/api.js
 
+// Simule des réservations existantes pour certaines dates et heures
+const existingReservations = [
+  { date: "2025-03-24", time: "18:00" },
+  { date: "2025-03-24", time: "19:00" },
+  { date: "2025-03-25", time: "20:00" }
+];
+
 /**
- * Simule une réponse d'API pour récupérer les heures disponibles.
+ * Vérifie si la date et l'heure choisies sont déjà réservées.
  * @param {string} date - La date au format YYYY-MM-DD.
- * @returns {Promise<string[]>} - Un tableau d'heures disponibles.
+ * @param {string} time - L'heure choisie.
+ * @returns {boolean} - Retourne vrai si la réservation existe déjà, sinon faux.
  */
-export const fetchAPI = async (date) => {
-  console.log(`fetchAPI appelée avec la date : ${date}`);
-
-  // Simule un délai de réponse (1 seconde)
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-
-  // Simule des heures disponibles en fonction du jour de la semaine
-  const dayOfWeek = new Date(date).getDay(); // 0 (dimanche) à 6 (samedi)
-  const times = dayOfWeek === 0 || dayOfWeek === 6
-    ? ['18:00', '19:00', '20:00'] // Heures pour le week-end
-    : ['17:00', '18:00', '19:00']; // Heures pour les jours de semaine
-
-  console.log(`fetchAPI retourne : ${times}`);
-  return times;
+const isAlreadyBooked = (date, time) => {
+  return existingReservations.some(
+    (reservation) => reservation.date === date && reservation.time === time
+  );
 };
 
 /**
- * Simule une soumission de formulaire.
+ * Simule une soumission de formulaire avec vérification des réservations existantes.
  * @param {Object} formData - Les données du formulaire.
  * @returns {boolean} - true si la soumission réussit, sinon false.
  */
 export const submitAPI = (formData) => {
   console.log("submitAPI appelée avec les données :", formData);
 
-  // Simule une validation des données
-  if (!formData.date || !formData.time || !formData.guests || !formData.occasion) {
-    console.log("submitAPI : soumission échouée (données manquantes)");
+  // Vérifie si la réservation est déjà existante
+  if (isAlreadyBooked(formData.date, formData.time)) {
+    console.log("submitAPI : soumission échouée (réservation déjà existante)");
     return false;
   }
+
+  // Si la réservation n'est pas déjà effectuée, ajoutons la à la liste des réservations
+  existingReservations.push({
+    date: formData.date,
+    time: formData.time
+  });
 
   console.log("submitAPI : soumission réussie");
   return true;
