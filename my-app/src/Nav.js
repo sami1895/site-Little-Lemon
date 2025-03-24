@@ -35,7 +35,7 @@ function Nav() {
             <img src={logo} alt="Little Lemon Logo" className="nav-logo" />
           </Link>
         </li>
-        <li><Link to="/">Home</Link></li>
+        <li><Link to="/" onClick={(e) => scrollToSection(e, "home")}>Home</Link></li>
         <li>
           {location.pathname === "/" ? (
             <a href="#chicago" onClick={(e) => scrollToSection(e, "chicago")}>
